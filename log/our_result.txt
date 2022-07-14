@@ -1,0 +1,6 @@
+"{'dataset': 'our', 'aggregator_type': 'single', 'avg_auc': 0.9926894920913796, 'avg_acc': 0.9662552175703325, 'avg_f1': 0.966570719560355, 'avg_aupr': 0.990379137447688}"
+
+"{'dataset': 'our', 'aggregator_type': 'single', 'avg_auc': 0.9909763451548255, 'avg_acc': 0.9576140983567368, 'avg_f1': 0.9578714077071611, 'avg_aupr': 0.9892568251746143}"
+"{'dataset': 'our', 'aggregator_type': 'single', 'avg_auc': 0.9925567676635367, 'avg_acc': 0.9654157214514842, 'avg_f1': 0.9655854452563981, 'avg_aupr': 0.990287935470942}"
+
+"{'dataset': 'our', 'aggregator_type': 'single', 'avg_auc': 0.9939954538778781, 'avg_acc': 0.9674031400174465, 'avg_f1': 0.9675105186287526, 'avg_aupr': 0.9922034111630065}"
