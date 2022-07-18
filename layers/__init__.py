@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from .aggregator import SumAggregator, ConcatAggregator, NeighAggregator, SingleAggregator, newAggregator
 
 Aggregator = {

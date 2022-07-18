@@ -5,7 +5,7 @@ PROCESSED_DATA_DIR = os.getcwd()+'/data'
 LOG_DIR = os.getcwd()+'/log'
 MODEL_SAVED_DIR = os.getcwd()+'/ckpt'
 
-TEST = 'A 7'
+TEST = 'A 2'
 
 KG_FILE = {
            'drugbank':os.path.join(RAW_DATA_DIR,'drugbank','train2id.txt'),
@@ -37,7 +37,7 @@ RESULT_LOG={'drugbank':'drugbank_result.txt','kegg':'kegg_result.txt', 'our': 'o
 PERFORMANCE_LOG = 'kgcn_performance.log'
 DRUG_EXAMPLE='{dataset}_examples.npy'
 SMILE_KEGG = 'data/smile_kegg/drugname_smile_pretrain.npy'
-SMILES_PRETRAIN = 'data/smile/smiles.npy'
+SMILES_PRETRAIN = 'data/smile/smiles2.npy'
 class ModelConfig(object):
     def __init__(self):
         self.neighbor_sample_size = 4 

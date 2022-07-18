@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from turtle import dot
 from keras.engine.topology import Layer
 from keras import backend as K

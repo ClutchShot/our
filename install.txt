@@ -1,4 +1,0 @@
-Python == 3.6.x
-Keras == 2.3.0
-Tensorflow == 1.13.1
-scikit-learn == 0.22
