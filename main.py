@@ -37,7 +37,7 @@ def get_optimizer(op_type, learning_rate):
 def prepare_smiles(drugs:list, smiles:list):
     drug_smiles = []
     for d in drugs:
-        drug_smiles.append(smiles[d-1][0])
+        drug_smiles.append(smiles[d[0]])
     return np.array(drug_smiles)
 
 def prerae_batch(size, batch):

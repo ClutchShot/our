@@ -6,7 +6,7 @@ import os
 import numpy as np
 from collections import defaultdict
 
-from torch import stack
+
 sys.path.append(os.getcwd()) 
 from sklearn.model_selection import train_test_split,StratifiedKFold
 from main import train
@@ -137,7 +137,7 @@ def process_data(dataset: str, neighbor_sample_size: int,K:int):
     np.save(adj_relation_file, adj_relation)
     print('Logging Info - Saved:', adj_entity_file)
 
-    smiles_pretraining = read_smiles_pretrain(SMILES_PRETRAIN)
+    smiles_pretraining = read_smiles_pretrain(SMILE_KEGG)
 
     cross_validation(K,examples,dataset,neighbor_sample_size, smiles_pretraining)
 
@@ -147,6 +147,9 @@ def find_ids(all_data):
         ids.append(all_data[i][0])
         ids.append(all_data[i][1])
     return np.unique(ids)
+
+def smiles_kegg(ids, smiles):
+    return dict(zip(ids, smiles))
 
 def devide_ids(ids:list, k):
     new_ids = []
@@ -220,6 +223,7 @@ def create_dataset_task2_norm(all_ids:list, all_data:list, k):
 def cross_validation(K_fold,examples,dataset,neighbor_sample_size, smiles):
 
     drug_ids = find_ids(examples)
+    smiles = smiles_kegg(drug_ids, smiles)
     # Task 0
     subsets=dict()
     n_subsets=int(len(examples)/K_fold)
@@ -262,7 +266,7 @@ def cross_validation(K_fold,examples,dataset,neighbor_sample_size, smiles):
             dev_d=val_d,
             test_d=test_data,
             neighbor_sample_size=neighbor_sample_size,
-            embed_dim=64, 
+            embed_dim=128, 
             n_depth=1,
             l2_weight=1e-7,
             # lr=2e-2,
@@ -295,5 +299,5 @@ if __name__ == '__main__':
     if not os.path.exists(MODEL_SAVED_DIR):
         os.makedirs(MODEL_SAVED_DIR)
     model_config = ModelConfig()
-    # process_data('kegg',NEIGHBOR_SIZE['kegg'],5)
-    process_data('our',NEIGHBOR_SIZE['drug'],5)
+    process_data('kegg',NEIGHBOR_SIZE['kegg'],5)
+    # process_data('our',NEIGHBOR_SIZE['drug'],5)
